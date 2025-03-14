@@ -65,7 +65,7 @@ export default function Hero() {
           </Button>
           <Button variant="outline" asChild>
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/Hibbanur-Rahman"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -75,7 +75,7 @@ export default function Hero() {
           </Button>
           <Button variant="outline" asChild>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/hibbanur-rahman/"
               target="_blank"
               rel="noopener noreferrer"
             >
