@@ -12,7 +12,7 @@ function App() {
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <div className="min-h-screen bg-background poppins-regular">
         <header className="fixed top-0 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50 flex justify-center">
-          <div className="w-full flex h-14 items-center justify-between max-w-7xl md:px-0 px-6">
+          <div className="w-full md:w-11/12 flex h-14 items-center justify-between max-w-7xl md:px-0 px-6">
             <span className="font-bold">HR.</span>
             <div className="flex items-center gap-4">
               <nav className="hidden md:flex gap-6">
@@ -59,7 +59,7 @@ function App() {
         </header>
 
         <main className=" py-20 w-full flex justify-center items-center ">
-          <div className="w-full max-w-7xl mx-auto md:px-0 px-6">
+          <div className="w-full md:w-11/12 max-w-7xl mx-auto md:px-0 px-6">
             <Hero />
             <Experience />
             <Education />
