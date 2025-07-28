@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { motion } from "framer-motion";
 
 import htmlLogo from "@/assets/images/htmllogo.png";
 import cssLogo from "@/assets/images/csslogo.png";
@@ -74,64 +75,143 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24 relative">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-purple-500/5 rounded-3xl"></div>
+      <motion.div 
+        className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-purple-500/5 rounded-3xl"
+        animate={{ 
+          backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"],
+        }}
+        transition={{ duration: 20, repeat: Infinity }}
+        style={{ backgroundSize: "200% 200%" }}
+      />
       
-      <div className="relative">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 mb-6">
+      <motion.div 
+        className="relative"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+      >
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.div 
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 mb-6"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <span className="text-sm font-medium">Technical Expertise</span>
-          </div>
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+          </motion.div>
+          <motion.h2 
+            className="text-4xl lg:text-5xl font-bold mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             Skills & 
-            <span className="bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent"> Technologies</span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <motion.span 
+              className="bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent"
+              animate={{ 
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+              }}
+              transition={{ duration: 5, repeat: Infinity }}
+              style={{ backgroundSize: "200% 200%" }}
+            >
+              {" "}Technologies
+            </motion.span>
+          </motion.h2>
+          <motion.p 
+            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             A comprehensive toolkit of modern technologies and frameworks I use to build exceptional digital experiences.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         
         <div className="grid gap-6 lg:grid-cols-2">
           {Object.entries(skills).map(([category, items], categoryIndex) => (
-            <Card 
-              key={category} 
-              className="group overflow-hidden border-0 bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10"
-              style={{ animationDelay: `${categoryIndex * 100}ms` }}
+            <motion.div
+              key={category}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
+              whileHover={{ y: -5 }}
             >
-              <CardHeader className="pb-4">
-                <CardTitle className="text-xl font-semibold flex items-center gap-3">
-                  <div className="w-2 h-8 bg-gradient-to-b from-primary to-purple-500 rounded-full"></div>
-                  {category}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                  {items.map((skill, index) => (
-                    <div 
-                      key={skill.name} 
-                      className="group/skill flex flex-col items-center gap-3 p-3 rounded-xl hover:bg-primary/5 transition-all duration-300"
-                      style={{ animationDelay: `${(categoryIndex * 100) + (index * 50)}ms` }}
-                    >
-                      <div className="relative">
-                        <div className="w-12 h-12 rounded-xl bg-background border border-border/50 p-2 flex items-center justify-center group-hover/skill:border-primary/30 group-hover/skill:bg-primary/5 transition-all duration-300 group-hover/skill:scale-110">
-                          <img 
-                            src={skill.logo} 
-                            alt={`${skill.name} logo`} 
-                            className="max-h-full max-w-full object-contain"
+              <Card className="group overflow-hidden border-0 bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10">
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-xl font-semibold flex items-center gap-3">
+                    <motion.div 
+                      className="w-2 h-8 bg-gradient-to-b from-primary to-purple-500 rounded-full"
+                      animate={{ height: [32, 40, 32] }}
+                      transition={{ duration: 2, repeat: Infinity, delay: categoryIndex * 0.5 }}
+                    />
+                    {category}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    {items.map((skill, index) => (
+                      <motion.div 
+                        key={skill.name} 
+                        className="group/skill flex flex-col items-center gap-3 p-3 rounded-xl hover:bg-primary/5 transition-all duration-300"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ 
+                          duration: 0.4, 
+                          delay: (categoryIndex * 0.2) + (index * 0.05),
+                          type: "spring",
+                          stiffness: 300 
+                        }}
+                        whileHover={{ 
+                          scale: 1.1,
+                          y: -5,
+                          transition: { type: "spring", stiffness: 400 }
+                        }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <div className="relative">
+                          <motion.div 
+                            className="w-12 h-12 rounded-xl bg-background border border-border/50 p-2 flex items-center justify-center group-hover/skill:border-primary/30 group-hover/skill:bg-primary/5 transition-all duration-300"
+                            whileHover={{ rotate: [0, -10, 10, 0] }}
+                            transition={{ duration: 0.5 }}
+                          >
+                            <motion.img 
+                              src={skill.logo} 
+                              alt={`${skill.name} logo`} 
+                              className="max-h-full max-w-full object-contain"
+                              whileHover={{ scale: 1.1 }}
+                            />
+                          </motion.div>
+                          <motion.div 
+                            className="absolute inset-0 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-xl opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300 -z-10 blur-sm"
+                            animate={{ rotate: 360 }}
+                            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
                           />
                         </div>
-                        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-xl opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300 -z-10 blur-sm"></div>
-                      </div>
-                      <span className="text-xs font-medium text-center leading-tight group-hover/skill:text-primary transition-colors duration-300">
-                        {skill.name}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+                        <motion.span 
+                          className="text-xs font-medium text-center leading-tight group-hover/skill:text-primary transition-colors duration-300"
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          {skill.name}
+                        </motion.span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
