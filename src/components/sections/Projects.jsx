@@ -120,66 +120,133 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section className="py-16" id='projects'>
-      <h2 className="text-3xl font-bold mb-8 border-b pb-2">Projects</h2>
+    <section className="py-24 relative" id="projects">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-primary/5 rounded-3xl"></div>
+      
+      <div className="relative">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 mb-6">
+            <span className="text-sm font-medium">Portfolio</span>
+          </div>
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+            Featured 
+            <span className="bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent"> Projects</span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Showcase of my recent work and projects that demonstrate my skills in full-stack development.
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {projects.map((project) => (
-          <Card key={project.title} className="overflow-hidden flex flex-col pt-0">
-            <div className="relative h-[250px] overflow-hidden">
-              <img
-                src={project.image || "/placeholder.svg"}
-                alt={project.title}
-                className=" absolute  transition-all  hover:translate-y-[-80%] duration-800"
-              />
-            </div>
-            <CardHeader>
-              <CardTitle className="text-xl">{project.title}</CardTitle>
-              <CardDescription>{project.description}</CardDescription>
-            </CardHeader>
-            <CardContent className="flex-grow">
-              <h4 className="font-semibold mb-2">Key Features:</h4>
-              <ul className="list-disc pl-5 mb-4 space-y-1">
-                {project.features.map((feature, index) => (
-                  <li key={index} className="text-sm">
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <div className="flex flex-wrap gap-2 mt-4">
-                {project.technologies.map((tech) => (
-                  <Badge key={tech} variant="secondary" className="text-xs">
-                    {tech}
-                  </Badge>
-                ))}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
+            <Card 
+              key={project.title} 
+              className="group overflow-hidden border-0 bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10"
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
+              <div className="relative h-[280px] overflow-hidden bg-gradient-to-br from-primary/10 to-purple-500/10">
+                <img
+                  src={project.image || "/placeholder.svg"}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Floating action buttons */}
+                <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  <Button size="sm" variant="secondary" className="backdrop-blur-sm bg-background/80" asChild>
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View source code"
+                    >
+                      <Github className="h-4 w-4" />
+                    </a>
+                  </Button>
+                  <Button size="sm" className="backdrop-blur-sm" asChild>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View live demo"
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                    </a>
+                  </Button>
+                </div>
               </div>
-            </CardContent>
-            <CardFooter className="flex gap-4">
-              <Button asChild variant="outline" size="sm">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="gap-2"
-                >
-                  <Github className="h-4 w-4" />
-                  Code
-                </a>
-              </Button>
-              <Button asChild size="sm">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="gap-2"
-                >
-                  <ExternalLink className="h-4 w-4" />
-                  Live Demo
-                </a>
-              </Button>
-            </CardFooter>
-          </Card>
-        ))}
+              
+              <CardHeader className="pb-4">
+                <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">
+                  {project.title}
+                </CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  {project.description}
+                </CardDescription>
+              </CardHeader>
+              
+              <CardContent className="space-y-6">
+                <div>
+                  <h4 className="font-semibold mb-3 flex items-center gap-2">
+                    <div className="w-1 h-4 bg-primary rounded-full"></div>
+                    Key Features
+                  </h4>
+                  <ul className="space-y-2">
+                    {project.features.slice(0, 3).map((feature, idx) => (
+                      <li key={idx} className="text-sm text-muted-foreground flex items-start gap-3">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold mb-3 flex items-center gap-2">
+                    <div className="w-1 h-4 bg-purple-500 rounded-full"></div>
+                    Technologies
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <Badge 
+                        key={tech} 
+                        variant="outline" 
+                        className="text-xs hover:bg-primary/10 hover:border-primary/30 transition-colors duration-200"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              </CardContent>
+              
+              <CardFooter className="pt-6 flex gap-3">
+                <Button variant="outline" size="sm" className="flex-1 group/btn" asChild>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github className="mr-2 h-4 w-4 group-hover/btn:scale-110 transition-transform" />
+                    Source Code
+                  </a>
+                </Button>
+                <Button size="sm" className="flex-1 group/btn" asChild>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4 group-hover/btn:scale-110 transition-transform" />
+                    Live Demo
+                  </a>
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
       </div>
     </section>
   );

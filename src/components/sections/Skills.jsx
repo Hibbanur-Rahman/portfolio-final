@@ -72,35 +72,58 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="py-24 bg-white dark:bg-transparent">
-      <div className="container mx-auto px-0">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-2">My Skills</h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            A comprehensive collection of technologies and tools I've mastered throughout my career.
+    <section id="skills" className="py-24 relative">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-purple-500/5 rounded-3xl"></div>
+      
+      <div className="relative">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 mb-6">
+            <span className="text-sm font-medium">Technical Expertise</span>
+          </div>
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+            Skills & 
+            <span className="bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent"> Technologies</span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            A comprehensive toolkit of modern technologies and frameworks I use to build exceptional digital experiences.
           </p>
         </div>
         
-        <div className="grid gap-8 md:grid-cols-2">
-          {Object.entries(skills).map(([category, items]) => (
-            <Card key={category} className="overflow-hidden border border-gray-200 dark:border-gray-600 hover:shadow-lg transition-shadow duration-300">
-              <CardHeader className="bg-gray-100 dark:bg-gray-800">
-                <CardTitle className="text-xl font-semibold">{category}</CardTitle>
+        <div className="grid gap-6 lg:grid-cols-2">
+          {Object.entries(skills).map(([category, items], categoryIndex) => (
+            <Card 
+              key={category} 
+              className="group overflow-hidden border-0 bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10"
+              style={{ animationDelay: `${categoryIndex * 100}ms` }}
+            >
+              <CardHeader className="pb-4">
+                <CardTitle className="text-xl font-semibold flex items-center gap-3">
+                  <div className="w-2 h-8 bg-gradient-to-b from-primary to-purple-500 rounded-full"></div>
+                  {category}
+                </CardTitle>
               </CardHeader>
-              <CardContent className="pt-6">
-                <div className="flex flex-wrap gap-4">
-                  {items.map((skill) => (
-                    <div key={skill.name} className="flex flex-col items-center group">
-                      <div className="w-16 h-16 rounded-full overflow-hidden bg-white dark:bg-gray-700 p-2 flex items-center justify-center mb-2 border border-gray-200 dark:border-gray-600 shadow-sm group-hover:shadow-md transition-all duration-300">
-                        <img 
-                          src={skill.logo} 
-                          alt={`${skill.name} logo`} 
-                          className="max-h-full max-w-full object-contain"
-                        />
+              <CardContent>
+                <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                  {items.map((skill, index) => (
+                    <div 
+                      key={skill.name} 
+                      className="group/skill flex flex-col items-center gap-3 p-3 rounded-xl hover:bg-primary/5 transition-all duration-300"
+                      style={{ animationDelay: `${(categoryIndex * 100) + (index * 50)}ms` }}
+                    >
+                      <div className="relative">
+                        <div className="w-12 h-12 rounded-xl bg-background border border-border/50 p-2 flex items-center justify-center group-hover/skill:border-primary/30 group-hover/skill:bg-primary/5 transition-all duration-300 group-hover/skill:scale-110">
+                          <img 
+                            src={skill.logo} 
+                            alt={`${skill.name} logo`} 
+                            className="max-h-full max-w-full object-contain"
+                          />
+                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-xl opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300 -z-10 blur-sm"></div>
                       </div>
-                      <Badge variant="secondary" className="group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                      <span className="text-xs font-medium text-center leading-tight group-hover/skill:text-primary transition-colors duration-300">
                         {skill.name}
-                      </Badge>
+                      </span>
                     </div>
                   ))}
                 </div>
