@@ -81,7 +81,7 @@ function App() {
               <span className="font-bold text-lg bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">HR.</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              © 2024 Hibbanur Rahman. All rights reserved.
+              © 2025 Hibbanur Rahman. All rights reserved.
             </p>
           </div>
         </footer>
