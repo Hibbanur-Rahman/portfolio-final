@@ -9,9 +9,12 @@ import {
   Download,
 } from "lucide-react";
 import heroImg from "@/assets/images/hero-section-img.png";
+import heroImgDark from "@/assets/images/hero-section-img-dark.png";
 import { Badge } from "../ui/badge";
-import resumePdf from '@/assets/files/Resume.pdf'
+import resumePdf from '@/assets/files/Resume-V1.pdf'
+import { useTheme } from "../theme-provider";
 export default function Hero() {
+  const {theme}=useTheme();
   return (
     <section
       id="about"
@@ -96,7 +99,7 @@ export default function Hero() {
         </div>
       </div>
       <div className="flex items-center justify-center md:w-6/12 w-full">
-        <img src={heroImg} alt="heroImg" />
+        <img src={theme==='dark'?heroImgDark:heroImg} alt="heroImg" />
       </div>
     </section>
   );
