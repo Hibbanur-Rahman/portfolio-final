@@ -32,7 +32,7 @@ const ContactSection = () => {
     {
       icon: MapPin,
       label: "Location",
-      value: "Gachibowli, Hyderabad, India",
+      value: "Darbhanga, Bihar, India",
       href: null,
       color: "text-orange-600 dark:text-orange-400",
       bgColor: "bg-orange-500/10 border-orange-500/20",

@@ -17,6 +17,77 @@ import projectImg4 from '@/assets/images/projectImg-4.png';
 const ProjectsSection = () => {
   const projects = [
     {
+      title: "Turant Logistics: Complete Logistics System",
+      description:
+        "A comprehensive logistics platform with consumer app, rider app, and admin dashboard. Built with React Native, Next.js, and Node.js microservices architecture featuring real-time tracking and queue management.",
+      image: projectImg1,
+      link: "https://play.google.com/store/apps/details?id=com.turantlogistics_rahman",
+      github: "#",
+      featured: true,
+      features: [
+        "Built mobile apps using React Native and web/admin panel using Next.js.",
+        "Implemented real-time ride tracking and request handling via Socket.io.",
+        "Queue management using RabbitMQ for efficient request processing.",
+        "Integrated Cashfree for payments and Firebase for push notifications.",
+      ],
+      technologies: [
+        "React Native",
+        "Next.js",
+        "Node.js",
+        "Microservices",
+        "Socket.io",
+        "RabbitMQ",
+        "Firebase",
+        "Cashfree",
+      ],
+    },
+    {
+      title: "Spirit HRMS: ERP System",
+      description:
+        "A feature-rich ERP system for human resource management with comprehensive modules for attendance, leave, salary, expenses, and project management with Gantt view.",
+      image: projectImg2,
+      link: "https://spirit-hrms.mithilastack.com",
+      github: "#",
+      featured: true,
+      features: [
+        "Attendance tracking with live location verification.",
+        "Complete leave and employee management system.",
+        "Salary, expense & invoice tracking with detailed reports.",
+        "Internal/client project management with interactive Gantt view.",
+      ],
+      technologies: [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Gantt Chart",
+        "Geolocation API",
+      ],
+    },
+    {
+      title: "Maithili Books: E-commerce Platform",
+      description:
+        "A full-stack e-commerce web application for book sales with user authentication, shopping cart, and comprehensive order management system.",
+      image: projectImg3,
+      link: "https://gyanchangera.in",
+      github: "#",
+      featured: true,
+      features: [
+        "Complete book listing and catalog management system.",
+        "Secure user authentication and authorization.",
+        "Shopping cart functionality with order tracking.",
+        "Admin dashboard at admin.gyanchangera.in for management.",
+      ],
+      technologies: [
+        "Next.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "JWT",
+        "Responsive Design",
+      ],
+    },
+    {
       title: "NextGenEdu: e-learning platform",
       description:
         "A fully functional, full stack (MERN) e-learning platform web application aimed at enhancing personalized, accessible, and engaging online education for diverse and underserved learners.",
@@ -204,6 +275,24 @@ const ProjectsSection = () => {
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
+                  {project.featured && (
+                    <motion.div 
+                      className="absolute top-4 left-4 z-20"
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.3, type: "spring" }}
+                    >
+                      <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-primary to-purple-500 text-white shadow-lg">
+                        <motion.div 
+                          className="w-2 h-2 bg-white rounded-full"
+                          animate={{ scale: [1, 1.2, 1] }}
+                          transition={{ duration: 2, repeat: Infinity }}
+                        />
+                        <span className="text-xs font-semibold">Latest Project</span>
+                      </div>
+                    </motion.div>
+                  )}
                   <motion.img
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}

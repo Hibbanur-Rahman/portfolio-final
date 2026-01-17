@@ -11,7 +11,7 @@ import {
 import heroImg from "@/assets/images/hero-section-img.png";
 import heroImgDark from "@/assets/images/hero-section-img-dark.png";
 import { Badge } from "../ui/badge";
-import resumePdf from '@/assets/files/Resume-V1.pdf'
+import resumePdf from '@/assets/files/Resume-V3.pdf'
 import { useTheme } from "../theme-provider";
 import { motion } from "framer-motion";
 
@@ -107,8 +107,8 @@ export default function Hero() {
                 className="text-lg text-muted-foreground max-w-2xl leading-relaxed"
                 variants={itemVariants}
               >
-                Passionate about crafting exceptional digital experiences with modern technologies. 
-                Currently building innovative solutions at Slikk.Ai.
+                Passionate full-stack developer specializing in MERN stack with expertise in React.js, React Native, Next.js, Node.js, and modern web technologies. 
+                Currently building innovative e-commerce, ERP, and logistics solutions at Mithila Stack.
               </motion.p>
             </motion.div>
           </motion.div>
@@ -121,7 +121,7 @@ export default function Hero() {
             {[
               { icon: Mail, label: "Email", value: "hibbanrahmanhyt@gmail.com" },
               { icon: Phone, label: "Phone", value: "+91 99731 52523" },
-              { icon: MapPin, label: "Location", value: "Gachibowli, Hyderabad, India", span: "sm:col-span-2 lg:col-span-1 xl:col-span-2" }
+              { icon: MapPin, label: "Location", value: "Darbhanga, Bihar, India", span: "sm:col-span-2 lg:col-span-1 xl:col-span-2" }
             ].map((contact, index) => (
               <motion.div 
                 key={contact.label}

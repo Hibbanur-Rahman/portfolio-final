@@ -7,6 +7,7 @@ import Experience from "@/components/sections/Experience";
 import Education from "@/components/sections/Education";
 import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
+import GithubActivity from "@/components/sections/GithubActivity";
 import Contact from "@/components/sections/Contact";
 
 function App() {
@@ -58,6 +59,13 @@ function App() {
                     <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-center"></span>
                   </a>
                   <a
+                    href="#github-activity"
+                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
+                  >
+                    Activity
+                    <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-center"></span>
+                  </a>
+                  <a
                     href="#contact"
                     className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
                   >
@@ -77,6 +85,7 @@ function App() {
               <Education />
               <Skills />
               <Projects />
+              <GithubActivity />
               <Contact />
             </div>
           </main>

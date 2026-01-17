@@ -12,10 +12,36 @@ import { motion } from "framer-motion";
 export default function Experience() {
   const experiences = [
     {
+      company: "Mithila Stack",
+      position: "Full Stack Developer",
+      location: "Darbhanga, Bihar",
+      period: "June 2025 - Present",
+      description: [
+        "Developed full-stack e-commerce platform 'Maithili Books' using Next.js, Node.js, Express.js, and MongoDB with features including book listings, user authentication, cart, and order management.",
+        "Built feature-rich ERP system 'Spirit HRMS' with React.js, Node.js, Express.js, and MongoDB including attendance tracking with live location, leave management, salary & expense tracking, and project management with Gantt view.",
+        "Developed complete logistics system 'Turant Logistics' with consumer app, rider app, and admin dashboard using React Native, Next.js, and Node.js microservices architecture.",
+        "Implemented real-time ride tracking via Socket.io, queue management using RabbitMQ, Cashfree payment integration, and Firebase push notifications.",
+      ],
+      skills: [
+        "Next.js",
+        "React.js",
+        "React Native",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Microservices",
+        "RabbitMQ",
+        "Socket.io",
+        "Firebase",
+        "Cashfree",
+      ],
+      current: true,
+    },
+    {
       company: "Slikk.Ai",
       position: "Full Stack Developer Intern",
       location: "Hyderabad, Telangana",
-      period: "Sep 2024 - Present",
+      period: "Sep 2024 - June 2025",
       description: [
         "Implemented the 'Files,' 'Task,' and 'Invite People' features in Slikk V2 and contributed to the 'Persona' and 'Gantt View' features in Slikk V1.",
         "Developed the entire frontend and integrated APIs for the Kaam365 dashboard web app using React.js.",
@@ -23,7 +49,7 @@ export default function Experience() {
         "Collaborated across teams to enhance user experience and streamline application features.",
       ],
       skills: ["React.js", "React Native", "API Integration"],
-      current: true,
+      current: false,
     },
     {
       company: "Intment Technologies (P) Ltd",
