@@ -14,13 +14,16 @@ import projectImg1 from '@/assets/images/projectImg-1.png';
 import projectImg2 from '@/assets/images/projectImg-2.png';
 import projectImg3 from '@/assets/images/projectImg-3.png';
 import projectImg4 from '@/assets/images/projectImg-4.png';
+import projectImg5 from '@/assets/images/projectImg-5.png';
+import projectImg6 from '@/assets/images/projectImg-6.png';
+import projectImg7 from '@/assets/images/projectImg-7.png';
 const ProjectsSection = () => {
   const projects = [
     {
       title: "Turant Logistics: Complete Logistics System",
       description:
         "A comprehensive logistics platform with consumer app, rider app, and admin dashboard. Built with React Native, Next.js, and Node.js microservices architecture featuring real-time tracking and queue management.",
-      image: projectImg1,
+      image: projectImg6,
       link: "https://play.google.com/store/apps/details?id=com.turantlogistics_rahman",
       github: "#",
       featured: true,
@@ -45,7 +48,7 @@ const ProjectsSection = () => {
       title: "Spirit HRMS: ERP System",
       description:
         "A feature-rich ERP system for human resource management with comprehensive modules for attendance, leave, salary, expenses, and project management with Gantt view.",
-      image: projectImg2,
+      image: projectImg5,
       link: "https://spirit-hrms.mithilastack.com",
       github: "#",
       featured: true,
@@ -68,7 +71,7 @@ const ProjectsSection = () => {
       title: "Maithili Books: E-commerce Platform",
       description:
         "A full-stack e-commerce web application for book sales with user authentication, shopping cart, and comprehensive order management system.",
-      image: projectImg3,
+      image: projectImg7,
       link: "https://gyanchangera.in",
       github: "#",
       featured: true,
