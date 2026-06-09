@@ -12,15 +12,37 @@ import { motion } from "framer-motion";
 export default function Experience() {
   const experiences = [
     {
-      company: "Mithila Stack",
+      company: "Alt-Switch Software Services",
+      position: "Software Engineer",
+      location: "Hyderabad",
+      period: "Jan 2026 - Present",
+      description: [
+        "Developed a warehouse, inventory, and e-commerce management system for ICS UK LTD using Angular, NestJS, and PostgreSQL, improving operational efficiency and inventory tracking.",
+        "Built the CaterChoice e-commerce platform, including a web application using Next.js and a mobile app using React Native.",
+        "Designed and developed warehouse management mobile applications using React Native for real-time inventory and logistics handling.",
+        "Implemented a Point of Sale (POS) system using Electron for desktop-based retail operations.",
+        "Collaborated with cross-functional teams to deliver scalable, high-performance solutions across web, mobile, and desktop platforms.",
+      ],
+      skills: [
+        "Angular",
+        "NestJS",
+        "PostgreSQL",
+        "Next.js",
+        "React Native",
+        "Electron",
+      ],
+      current: true,
+    },
+    {
+      company: "Mithilastack",
       position: "Full Stack Developer",
       location: "Darbhanga, Bihar",
-      period: "June 2025 - Present",
+      period: "June 2025 - Jan 2026",
       description: [
         "Developed full-stack e-commerce platform 'Maithili Books' using Next.js, Node.js, Express.js, and MongoDB with features including book listings, user authentication, cart, and order management.",
         "Built feature-rich ERP system 'Spirit HRMS' with React.js, Node.js, Express.js, and MongoDB including attendance tracking with live location, leave management, salary & expense tracking, and project management with Gantt view.",
-        "Developed complete logistics system 'Turant Logistics' with consumer app, rider app, and admin dashboard using React Native, Next.js, and Node.js microservices architecture.",
-        "Implemented real-time ride tracking via Socket.io, queue management using RabbitMQ, Cashfree payment integration, and Firebase push notifications.",
+        "Developed complete logistics system 'Turant Logistics' with consumer app, rider app, and admin dashboard using React Native, Next.js, and Node.js microservices architecture. Integrated Cashfree for payments and Firebase for push notifications.",
+        "Built full-stack EV rental platform 'VertEV' with admin dashboard (Next.js), consumer mobile app (React Native), and scalable backend. Integrated Juspay payment gateway, KYC verification, and real-time notifications.",
       ],
       skills: [
         "Next.js",
@@ -34,14 +56,15 @@ export default function Experience() {
         "Socket.io",
         "Firebase",
         "Cashfree",
+        "Juspay",
       ],
-      current: true,
+      current: false,
     },
     {
       company: "Slikk.Ai",
       position: "Full Stack Developer Intern",
       location: "Hyderabad, Telangana",
-      period: "Sep 2024 - June 2025",
+      period: "Sep 2024 - May 2025",
       description: [
         "Implemented the 'Files,' 'Task,' and 'Invite People' features in Slikk V2 and contributed to the 'Persona' and 'Gantt View' features in Slikk V1.",
         "Developed the entire frontend and integrated APIs for the Kaam365 dashboard web app using React.js.",

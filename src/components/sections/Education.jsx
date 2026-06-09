@@ -13,11 +13,11 @@ const EducationSection = () => {
     {
       institution: "Maulana Azad National Urdu University",
       location: "Hyderabad, Telangana",
-      degree: "CS & IT B.Tech",
-      period: "Sep 2021 - July 2025",
-      grade: "CGPA: 9.09",
+      degree: "B.Tech in Computer Science & Information Technology",
+      period: "Sep 2021 - April 2025",
+      grade: "CGPA: 8.97",
       icon: GraduationCap,
-      current: true,
+      current: false,
     },
     {
       institution: "Al-Irfan Residential School",

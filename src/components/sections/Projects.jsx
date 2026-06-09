@@ -20,6 +20,30 @@ import projectImg7 from '@/assets/images/projectImg-7.png';
 const ProjectsSection = () => {
   const projects = [
     {
+      title: "VertEV: EV Rental Platform",
+      description:
+        "A full-stack EV rental platform with admin dashboard (Next.js), consumer mobile app (React Native), and a scalable Node.js backend handling users, vehicles, rentals, and payments.",
+      image: projectImg6,
+      link: "https://vertev.in/",
+      github: "#",
+      featured: true,
+      features: [
+        "Admin dashboard to manage vehicles, hubs, batteries, rentals, users, payments, maintenance, and system logs.",
+        "Consumer mobile app with KYC verification, vehicle booking requests, and rental lifecycle management.",
+        "Integrated Juspay (HDFC merchant) payment gateway and built automated cron jobs for daily rental deductions.",
+        "Implemented real-time notifications for booking updates, approvals, and rental activities.",
+      ],
+      technologies: [
+        "Next.js",
+        "React Native",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Juspay",
+        "Firebase",
+      ],
+    },
+    {
       title: "Turant Logistics: Complete Logistics System",
       description:
         "A comprehensive logistics platform with consumer app, rider app, and admin dashboard. Built with React Native, Next.js, and Node.js microservices architecture featuring real-time tracking and queue management.",
@@ -165,6 +189,47 @@ const ProjectsSection = () => {
         "JWT",
         "AWS EC2",
         "Stripe",
+      ],
+    },
+    {
+      title: "TripSmart: Smart Tourism App",
+      description:
+        "A mobile app to help tourists find destinations, plan trips, and navigate efficiently with real-time features and map integration.",
+      image: projectImg4,
+      link: "https://github.com/Hibbanur-Rahman",
+      github: "https://github.com/Hibbanur-Rahman",
+      features: [
+        "Developed a mobile app to help tourists find destinations and plan trips.",
+        "Implemented real-time features and map integration using location APIs.",
+        "Efficient navigation with route planning and destination discovery.",
+      ],
+      technologies: [
+        "React Native",
+        "MongoDB",
+        "Express.js",
+        "Node.js",
+        "Location APIs",
+      ],
+    },
+    {
+      title: "MongoDB Models Visualizer (NPM Package)",
+      description:
+        "An open-source NPM package that automatically visualizes MongoDB/Mongoose schema relationships, generating visual diagrams to help developers analyze complex database architectures.",
+      image: projectImg3,
+      link: "https://www.npmjs.com/package/mongodb-models-visualizer",
+      github: "https://github.com/Hibbanur-Rahman",
+      features: [
+        "Automatically generates visual diagrams of MongoDB/Mongoose model relationships.",
+        "Designed to integrate easily into Node.js and Express applications.",
+        "Published as an open-source package on NPM for community use.",
+      ],
+      technologies: [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose",
+        "NPM",
+        "MERN Stack",
       ],
     },
     {
